@@ -1,10 +1,10 @@
 
 const VideoPlayer = () => {
     return (
-        <div>
+        <div className="h-full">
             <iframe
-                className="w-full h-[500px]"
-                src="https://drive.google.com/file/d/1PHz7Qxpj2RdzAPjxUSdRQpTUAY8dwt-Q/preview"
+                className="w-full h-full"
+                src="https://drive.google.com/file/d/1R9xrcPUStC9N04YXEnmbVutO3ksocNWS/preview"
                 allow="autoplay"
                 allowFullScreen
             ></iframe>

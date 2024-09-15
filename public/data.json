@@ -1,0 +1,127 @@
+[
+    {
+        "id": 1,
+        "thumbnail": "thumbnail1",
+        "title": "Web designing",
+        "group": "G-1",
+        "details": "Unlock the world of web development with our course. Learn HTML, CSS, and JavaScript to create stunning websites. Master both front-end and back-end development, and website.",
+        "duration_count": 4,
+        "duration_condition": "month",
+        "classes": 120,
+        "stack": [
+            "React",
+            "Mongo DB",
+            "Express JS",
+            "Node JS"
+        ],
+        "deadline_date": 30,
+        "deadline_month": "May",
+        "deadline_year": 2024,
+        "price": 100,
+        "discount": 40
+    },
+    {
+        "id": 2,
+        "thumbnail": "thumbnail2",
+        "title": "React Development",
+        "group": "G-2",
+        "details": "Become a proficient React developer. Learn to build dynamic web applications with React, understand component architecture, and integrate APIs effortlessly.",
+        "duration_count": 3,
+        "duration_condition": "month",
+        "classes": 90,
+        "stack": [
+            "React",
+            "Redux",
+            "Firebase"
+        ],
+        "deadline_date": 15,
+        "deadline_month": "April",
+        "deadline_year": 2024,
+        "price": 120,
+        "discount": 30
+    },
+    {
+        "id": 3,
+        "thumbnail": "thumbnail3",
+        "title": "Full Stack Development",
+        "group": "G-3",
+        "details": "Master both front-end and back-end technologies to become a full-stack developer. Learn to build complex web applications using modern frameworks and tools.",
+        "duration_count": 6,
+        "duration_condition": "month",
+        "classes": 200,
+        "stack": [
+            "React",
+            "Node JS",
+            "Mongo DB",
+            "GraphQL"
+        ],
+        "deadline_date": 10,
+        "deadline_month": "March",
+        "deadline_year": 2024,
+        "price": 150,
+        "discount": 50
+    },
+    {
+        "id": 4,
+        "thumbnail": "thumbnail4",
+        "title": "JavaScript Mastery",
+        "group": "G-4",
+        "details": "Deep dive into JavaScript and master the fundamentals and advanced concepts to become a skilled front-end developer. Learn asynchronous programming, ES6+, and more.",
+        "duration_count": 2,
+        "duration_condition": "month",
+        "classes": 60,
+        "stack": [
+            "JavaScript",
+            "ES6",
+            "TypeScript",
+            "Webpack"
+        ],
+        "deadline_date": 25,
+        "deadline_month": "February",
+        "deadline_year": 2024,
+        "price": 80,
+        "discount": 20
+    },
+    {
+        "id": 5,
+        "thumbnail": "thumbnail5",
+        "title": "UI/UX Design",
+        "group": "G-5",
+        "details": "Learn the principles of UI/UX design to create user-friendly and aesthetically pleasing interfaces. Understand design thinking, wireframing, and prototyping.",
+        "duration_count": 5,
+        "duration_condition": "month",
+        "classes": 100,
+        "stack": [
+            "Figma",
+            "Adobe XD",
+            "Sketch",
+            "InVision"
+        ],
+        "deadline_date": 5,
+        "deadline_month": "January",
+        "deadline_year": 2024,
+        "price": 110,
+        "discount": 35
+    },
+    {
+        "id": 6,
+        "thumbnail": "thumbnail6",
+        "title": "Python Programming",
+        "group": "G-6",
+        "details": "Learn Python from scratch to advanced levels. Master automation, data analysis, and web development using Python's versatile features and libraries.",
+        "duration_count": 3,
+        "duration_condition": "month",
+        "classes": 80,
+        "stack": [
+            "Python",
+            "Django",
+            "Flask",
+            "Pandas"
+        ],
+        "deadline_date": 20,
+        "deadline_month": "June",
+        "deadline_year": 2024,
+        "price": 90,
+        "discount": 25
+    }
+]

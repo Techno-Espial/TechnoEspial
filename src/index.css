@@ -2,8 +2,69 @@
 @tailwind components;
 @tailwind utilities;
 
-html {
-    scroll-behavior: smooth;
+/* Dropdown Menu Styles */
+.dropdown-menu {
+    list-style: none;
+    padding: 0;
+    margin-top: 20px;
+    width: full;
+}
+
+.dropdown-item {
+    margin-bottom: 10px;
+    border-radius: 5px;
+    background-color: #1e1e1e;
+}
+
+.submenu>.dropdown-item {
+    background-color: #414141;
+    padding: 5px 0;
+}
+
+.menu-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.toggle-sign {
+    font-size: 18px;
+    transition: transform 0.3s ease;
+}
+
+.submenu {
+    list-style: none;
+    padding-left: 10px;
+    margin: 0;
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: max-height 0.5s ease, opacity 0.5s ease, padding 0.5s ease;
+}
+
+.submenu li {
+    background-color: #E4F1FB;
+    margin: 5px 0;
+    padding: 8px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+/* Animation for opening and closing */
+.dropdown-item.open .submenu {
+    max-height: 500px;
+    /* Adjust based on content */
+    opacity: 1;
+    padding-top: 10px;
+}
+
+.dropdown-item.open .toggle-sign {
+    transform: rotate(180deg);
 }
 
 .button {
@@ -13,7 +74,8 @@ html {
     font-size: 20px;
     border-radius: 6px;
 }
-.topicsList > li {
+
+.topicsList>li {
     background-color: #00A4B0;
     color: #ffffff;
     display: inline-block;
@@ -24,10 +86,18 @@ html {
 }
 
 @keyframes rotate {
-    from {
+    /* from {
         transform: rotate(0deg);
     }
+
     to {
+        transform: rotate(360deg);
+    } */
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
         transform: rotate(360deg);
     }
 }
@@ -36,9 +106,11 @@ html {
     0% {
         transform: rotate(-10deg);
     }
+
     50% {
         transform: rotate(10deg);
     }
+
     100% {
         transform: rotate(-10deg);
     }
@@ -46,30 +118,34 @@ html {
 
 @keyframes shaking {
     0% {
-        right: 170px;
+        top: 440px;
     }
+
     50% {
-        right: 190px;
+        top: 430px;
     }
+
     100% {
-        right: 170px;
+        top: 440px;
     }
 }
 
 @keyframes strikethrough-animation {
-    0%{
+    0% {
         top: 10px;
         right: 0px;
         font-size: 30px;
         color: #ffffff;
     }
-    50%{
+
+    50% {
         top: -15px;
         right: 50px;
         font-size: 20px;
         text-decoration: line-through;
         color: #ff0000;
     }
+
     100% {
         top: -15px;
         right: 50px;
@@ -80,22 +156,40 @@ html {
 }
 
 @keyframes fade-up-animation {
-    0%{
+    0% {
         top: 10px;
         right: 0px;
         font-size: 30px;
     }
-    60%{
+
+    60% {
         top: 10px;
         right: 0px;
         font-size: 30px;
         opacity: 1;
     }
-    100%{
+
+    100% {
         top: 10px;
         right: 0px;
         font-size: 30px;
         opacity: 1;
+    }
+}
+
+@keyframes bit {
+    0% {
+        font-size: 75px;
+    }
+
+    50% {
+        font-size: 80px;
+        top: 425px;
+        left: 130px;
+    }
+
+    100% {
+        font-size: 75px;
     }
 }
 
@@ -104,6 +198,7 @@ html {
     right: 8px;
     animation: strikethrough-animation 4s infinite ease-in-out;
 }
+
 .new_price {
     color: #ffffff;
     opacity: 0;
@@ -114,21 +209,86 @@ html {
     box-shadow: none;
     transition: box-shadow 0.5s;
 }
+
 .card_shadow:hover {
     box-shadow: 5px 5px 15px;
 }
+
 .rotate-animation {
     animation: rotate 10s linear infinite;
 }
+
 .rotate-reverse {
     animation: rotateReverse 2s linear infinite;
 }
+
 .shaking {
     animation: shaking 2s linear infinite;
 }
-.yt,.fb,.dis,.li {
+
+.bit {
+    animation: bit 2s infinite ease-in-out;
+}
+
+.shadow-react {
+    filter: drop-shadow(0 0 10px rgba(0, 213, 255, 0.8)) drop-shadow(0 0 20px rgba(0, 213, 255, 0.6)) drop-shadow(0 0 30px rgba(0, 213, 255, 0.4));
+}
+
+.shadow-nodejs {
+    filter: drop-shadow(0 0 10px #339933) drop-shadow(0 0 20px #339933) drop-shadow(0 0 30px #339933);
+}
+
+.shadow-python {
+    filter: drop-shadow(0 0 1px #FFD43B) drop-shadow(0 0 10px #2a7df1) drop-shadow(0 0 20px #2a7df1) drop-shadow(0 0 30px #2a7df1);
+}
+
+.shadow-javascript {
+    filter: drop-shadow(0 0 1px #fff28c) drop-shadow(0 0 30px #fff28c);
+}
+
+.yt,
+.fb,
+.dis,
+.li {
     transition: 0.5s;
 }
-.yt:hover,.fb:hover,.dis:hover,.li:hover {
+
+.yt:hover,
+.fb:hover,
+.dis:hover,
+.li:hover {
     transform: rotate(10deg);
+}
+
+.notifications tr:nth-child(even) {
+    background-color: #606060;
+}
+
+.excellent {
+    box-shadow: 0px 0px 25px #00C8D7;
+}
+
+.widthTransition {
+    transition: width 2s;
+}
+
+@media all and (max-width:600px) {
+    @keyframes bit {
+        0% {
+            font-size: 75px;
+        }
+
+        50% {
+            font-size: 85px;
+            top: 425px;
+            left: 40px;
+        }
+
+        100% {
+            font-size: 75px;
+        }
+    }
+    .previewTable {
+        width: 500px;
+    }
 }

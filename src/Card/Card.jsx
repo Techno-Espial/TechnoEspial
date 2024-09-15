@@ -1,20 +1,21 @@
+import { Link } from "react-router-dom";
 
-const Card = () => {
+const Card = ({ data }) => {
+    const { id, title, group, details, duration_count, duration_condition, classes, stack, deadline_data, deadline_month, deadline_year, price, discount } = data;
     return (
         <div className="w-[400px] bg-[#333333] p-5 card_shadow">
             <div className="w-full h-[200px] bg-gray-500">
                 <div className="h-full flex justify-between items-end p-4">
-                    <p>4 month</p>
-                    <p>120 classes</p>
+                    <p>{duration_count} {duration_condition}</p>
+                    <p>{classes} classes</p>
                 </div>
             </div>
             <div className="p-2">
                 <div>
                     <ul className="topicsList py-4">
-                        <li>REACT</li>
-                        <li>Mongo DB</li>
-                        <li>Express JS</li>
-                        <li>Node JS</li>
+                        {
+                            stack.map(res => <li>{res}</li>)
+                        }
                     </ul>
                 </div>
                 <div>
@@ -27,7 +28,9 @@ const Card = () => {
                 </div>
                 <div className="flex justify-between h-[70px]">
                     <div className="flex items-center">
-                        <button className="button btn">Details</button>
+                        <Link to={`/courseDetails/${id}`}>
+                            <button className="button btn">Details</button>
+                        </Link>
                     </div>
                     <div >
                         {/* <div className="flex relative">

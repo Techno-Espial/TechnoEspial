@@ -65,6 +65,17 @@ const Navbar = () => {
                 My Class
             </NavLink>
         </li>
+        <li>
+            <NavLink
+                to="/dashboard"
+                className={({ isActive }) =>
+                    isActive ? "border-b-2 border-blue-500 py-2 px-3 mx-1"
+                        : "hover:border-b-2 hover:border-blue-500 py-2 px-3"
+                }
+            >
+                Dashboard
+            </NavLink>
+        </li>
     </>
 
     const itemVariants = {
@@ -83,7 +94,7 @@ const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false);
 
     return (
-        <div>
+        <div className="border-b text-white">
             <div className="container mx-auto flex">
                 <div className="navbar">
                     <div className="navbar-start">
@@ -112,7 +123,7 @@ const Navbar = () => {
                                 <motion.nav
                                     initial={false}
                                     animate={isOpen ? "open" : "closed"}
-                                    className="menu w-[270px] ml-[-115px]"
+                                    className={`menu w-[270px] ml-[-115px] pt-0 ${isOpen ? 'block' : 'hidden'}`}
                                 >
                                     <motion.button
                                         whileTap={{ scale: 0.97 }}
@@ -130,7 +141,7 @@ const Navbar = () => {
                                         </motion.div>
                                     </motion.button>
                                     <motion.ul
-                                        className="text-lg w-fit mx-auto py-4 px-5 rounded-xl bg-[#494949] border-2"
+                                        className="text-lg w-fit mx-auto py-4 px-5 rounded-xl bg-[#494949] mt-[-16px] border-2"
                                         variants={{
                                             open: {
                                                 clipPath: "inset(0% 0% 0% 0% round 10px)",
@@ -162,10 +173,10 @@ const Navbar = () => {
                                             <p className="text-2xl font-bold">Md Jhon Tison</p>
                                             <p>Student ID : A1G1WDES</p>
                                         </div>
-                                        <motion.li className="border-t-[1px] py-2 hover:bg-[#333333]" variants={itemVariants}>Notifications</motion.li>
-                                        <motion.li className="border-t-[1px] py-2 hover:bg-[#333333]" variants={itemVariants}>Announcement</motion.li>
-                                        <motion.li className="border-t-[1px] py-2 hover:bg-[#333333]" variants={itemVariants}>My Progress</motion.li>
-                                        <motion.li className="border-t-[1px] py-2 hover:bg-[#333333]" variants={itemVariants}>Assignment Marks</motion.li>
+                                        <motion.li className="border-t-[1px] py-2 hover:bg-[#333333]" variants={itemVariants}><Link to="/notifications">Notifications</Link></motion.li>
+                                        <motion.li className="border-t-[1px] py-2 hover:bg-[#333333]" variants={itemVariants}><Link to="/announcement">Announcement</Link></motion.li>
+                                        <motion.li className="border-t-[1px] py-2 hover:bg-[#333333]" variants={itemVariants}><Link to="/myProgress">My Progress</Link></motion.li>
+                                        <motion.li className="border-t-[1px] py-2 hover:bg-[#333333]" variants={itemVariants}><Link to="/assignmentMarks">Assignment Marks</Link></motion.li>
                                     </motion.ul>
                                 </motion.nav>
                             </div>
@@ -177,7 +188,9 @@ const Navbar = () => {
                             //     <Link to="/login">
                             //         <button className="btn btn-outline">Login</button>
                             //     </Link>
-                            <button className="btn btn-outline">Login</button>
+                            <Link to="/login">
+                                <button className="btn btn-outline">Login</button>
+                            </Link>
                         }
                     </div>
                 </div>
@@ -188,8 +201,8 @@ const Navbar = () => {
                     <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[999] p-2 shadow bg-base-100 rounded-box w-[120px]">
                         {navLinks}
 
-                        <Link to={'/login'}>
-                            <button className="btn">Login</button>
+                        <Link to="/login">
+                            <button className="btn btn-outline">Login</button>
                         </Link>
                         {
                             // user ? <button onClick={handleSignOut} className="btn">Log Out</button> : <Link to="/login">
